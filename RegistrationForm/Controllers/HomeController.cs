@@ -30,7 +30,7 @@ namespace RegistrationForm.Controllers
 
         public ActionResult Registration()
         {
-                                        
+
             return View();
         }
         public ActionResult Result(Person person)
@@ -41,9 +41,33 @@ namespace RegistrationForm.Controllers
             ViewBag.Phone = person.Phone;
             ViewBag.Gender = person.Gender;
             ViewBag.Coffee = person.Coffee;
-            
+
+            if (person.Coffee == "Cappucino")
+            {
+                person.Coffee = "There are 120 calories in 1 serving of Starbucks Cappuccino (Grande). \nCalorie breakdown: 31% fat\n 41% carbs 28% protein.";
+            }
+            if (person.Coffee == "Mocha")
+            {
+                person.Coffee = "There are 290 calories in 1 serving  of Starbucks Caffe Mocha w/ Whole Milk & Whipped Cream 1 tall. ";
+            }
+            if (person.Coffee == "Caffe Latte")
+            {
+                person.Coffee = "There are 190 calories in 1 serving of Starbucks Caffe Latte. ";
+            }
             return View(person);
-           
+
+        }
+
+        public ActionResult PersonView(Person person)
+        {
+            ViewBag.UserName = person.UserName;
+            ViewBag.Email = person.Email;
+            ViewBag.Password = person.Password;
+            ViewBag.Phone = person.Phone;
+            ViewBag.Gender = person.Gender;
+            ViewBag.Coffee = person.Coffee;
+
+            return View();
         }
     }
 }

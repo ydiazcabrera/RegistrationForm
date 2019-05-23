@@ -3,17 +3,41 @@
 }
 
 
-    <form action="Result" method="post">
-        <p>  </p>
-        <p>  </p>
-        <p style="color:cadetblue"><i><b>Please fill the form to register: </b></i> </p>
+<form action="Result" method="post">
+    <p>  </p>
+    <p>  </p>
+    <p style="color:cadetblue"><i><b>Please fill the form to register: </b></i> </p>
+    <fieldset>
         <b>User Name:</b> <br />
-        <input type="text" name="UserName"  pattern="[A-B-C-D-E-F-G-H-I-J-K-L-M-N-O-P-Q-R-S-T-U-V-W-X-Y-Z-a-b-c-d-e-f-g-h-i-j-k-l-m-n-o-p-q-r-s-t-u-v-w-x-y-z]{3,}" required/><br />
+        <input type="text" name="UserName" pattern="[A-Za-z}" required /><br />
+
         <b>Password: </b> <br />
         <input type="password" minlength="8" name="password" required /><br />
+
         <b>Email:  </b> <br />
-        <input type="email" name="Email" pattern= "^([\w\.\-]+)\@('@')([\w\-]{2,}?)((\.(\w){2,3})+)$"  required /><br />
-        <input type="submit" />
-    </form>
+        <input type="email" name="Email" pattern="^([\w\.\-]+)\@('@')([\w\-]{2,}?)((\.(\w){2,3})+)$" required /><br />
+
+        <b>Phone: </b><br />
+        <input type="text" name="Phone" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" required><br />
+    </fieldset>
+
+    <fieldset>
+
+        <input type="radio" name="Gender" value="male"> Male<br>
+        <input type="radio" name="Gender" value="female"> Female<br>
+
+        <select name ="Coffee"class="selectpicker show-tick" data-width="auto">
+
+            <option>Coffee</option>
+            <option value="Cappucino">Cappucino</option>
+            <option value=" Mocha">Mocha</option>
+            <option value="Caffe Latte">Caffe Latte</option>
+
+        </select>
+                                    
+    </fieldset>
+
+    <input type="submit" />
+</form>
 
 

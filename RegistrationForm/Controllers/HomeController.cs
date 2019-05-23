@@ -38,8 +38,11 @@ namespace RegistrationForm.Controllers
             ViewBag.UserName = person.UserName;
             ViewBag.Email = person.Email;
             ViewBag.Password = person.Password;
-
-            return View();
+            ViewBag.Phone = person.Phone;
+            ViewBag.Gender = person.Gender;
+            ViewBag.Coffee = person.Coffee;
+            
+            return View(person);
            
         }
     }
